@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Registration</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+*{
+text-align: center;
+}
+</style>
+<script type="text/javascript">
+	function validate() {
+		var name=document.myform.name.value;  
+        var password=document.myform.password.value;
+        var password2=document.myform.password2.value;
+        var email=document.myform.email.value; 
+        
+ if(password.length<3 ||password==null || password==""){  
+  alert("Password must be at least 3 characters long.");  
+  return false;  
+  }  
+  else if(password!=password2){
+  alert("Password should be same..");
+  return false;
+  }
+ 
+	}
+</script>
+</head>
+<body>
+	<div >
+      <form name="myform" action="./register.do" method="post" onsubmit="return validate()">
+<fieldset>
+<legend>Customer Registration</legend>
+<table>
+<tr>
+<td>Customer Name</td>
+<td><input type="text" name="name" placeholder="Enter Your Name" required></td>
+</tr>
+<tr>
+<td>Email ID</td>
+<td><input type="text" name="email" placeholder="Enter Email ID in Lowercase" required></td>
+</tr>
+
+<tr>
+<td>Enter Password</td>
+<td><input type="password" name="password" placeholder="Enter Password" required></td>
+</tr>
+<tr>
+<td>Re-Enter Password</td>
+<td><input type="password" name="password2" placeholder="Enter Password" required></td>
+</tr>
+
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><input type="Submit" name="register" value="Register"></td>
+<td><input type="Reset" name="formreset" value="Reset"></td>
+</tr>
+</div>
+<tr>
+<p>
+If you have account already..Try Login <a href="views/login.jsp">Login</a>
+</p>
+</tr>
+</table>
+</fieldset>
+</form>
+</body>
+</html>
